@@ -27,7 +27,7 @@ def multitau(signal, lags_per_level=16):
     # 1-D data hack
     if len(signal.shape) == 1:
         N = even(signal.shape[0])
-        a = np.array(signal[np.newaxis, :N], copy=True)
+        a = np.array(signal[np.newaxis, :N], copy=False)
     elif len(signal.shape) == 2:
         # copy data a local array
         N = even(signal.shape[1])
